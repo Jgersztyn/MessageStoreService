@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34526.213
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageStoreService", "src\MessageStoreService\MessageStoreService.csproj", "{0B9499E3-919A-4C0F-8CF2-79E9AEE4F4F6}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{602FC772-6CCB-482A-B71B-15F9A45103C6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DBF33B40-F93D-4295-AC6F-08E6D84C4AA5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B9499E3-919A-4C0F-8CF2-79E9AEE4F4F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B9499E3-919A-4C0F-8CF2-79E9AEE4F4F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B9499E3-919A-4C0F-8CF2-79E9AEE4F4F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B9499E3-919A-4C0F-8CF2-79E9AEE4F4F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{602FC772-6CCB-482A-B71B-15F9A45103C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{602FC772-6CCB-482A-B71B-15F9A45103C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{602FC772-6CCB-482A-B71B-15F9A45103C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{602FC772-6CCB-482A-B71B-15F9A45103C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0B9499E3-919A-4C0F-8CF2-79E9AEE4F4F6} = {DBF33B40-F93D-4295-AC6F-08E6D84C4AA5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9048A97-A6A3-4845-9FB5-138103A15A4F}
+	EndGlobalSection
+EndGlobal

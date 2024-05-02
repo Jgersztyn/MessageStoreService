@@ -1,0 +1,6 @@
+@MessageStoreService_HostAddress = http://localhost:5267
+
+GET {{MessageStoreService_HostAddress}}/recordstores/
+Accept: application/json
+
+###

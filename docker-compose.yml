@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: hangfire_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  messagestoreservice:
+    image: ${DOCKER_REGISTRY-}messagestoreservice
+    depends_on:
+      - postgres
+    environment:
+      - ConnectionStrings__Postgres=Host=postgres;Port=5432;Database=hangfire_db;Username=postgres;Password=password
+    build:
+      context: .
+      dockerfile: src/MessageStoreService/Dockerfile
