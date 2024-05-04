@@ -1,4 +1,6 @@
 using Hangfire;
+using MessageStoreService.Application;
+using MessageStoreService.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration
@@ -11,6 +13,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddHealthChecks();
 builder.Services.AddServices(configuration);
 
+//builder.Services.AddSingleton((provider) =>
+//{
+//    var endpointUri = new Uri(configuration["Cosmos:EndpointUri"]);
+//}
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -22,9 +29,11 @@ app.UseHttpsRedirection();
 app.UseSwagger();
 
 // API endpoint for testing
-app.MapGet("/recordstores", async () =>
+app.MapGet("/recordstores", async (ICosmosDataService cosmosDataService) =>
 {
-    Console.WriteLine("Add the endpoint for get recordstores here");
+    var results = await cosmosDataService.GetMaintenanceRecords();
+
+    //await CosmosDataServiceStatic.QueryAttemptTwoWithParamsExclamation();
 })
 .WithName("GetRecordStores")
 .WithOpenApi();
